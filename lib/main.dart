@@ -1,0 +1,25 @@
+import 'package:flutter/material.dart';
+
+import 'home_page.dart';
+import 'music_screen.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Modern Grid Menu',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: MyHomePage(),
+      routes: {
+        '/music': (context) => MusicScreen(),
+      },
+    );
+  }
+}
