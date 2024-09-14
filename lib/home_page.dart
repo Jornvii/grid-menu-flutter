@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -9,7 +11,11 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Map<String, dynamic>> menuItems = [
     {"title": "Home", "icon": Icons.home, "color": Colors.blue},
     {"title": "Search", "icon": Icons.search, "color": Colors.green},
-    {"title": "Notifications", "icon": Icons.notifications, "color": Colors.red},
+    {
+      "title": "Notifications",
+      "icon": Icons.notifications,
+      "color": Colors.red
+    },
     {"title": "Settings", "icon": Icons.settings, "color": Colors.orange},
     {"title": "Favorites", "icon": Icons.favorite, "color": Colors.pink},
     {"title": "Profile", "icon": Icons.person, "color": Colors.purple},
@@ -20,7 +26,11 @@ class _MyHomePageState extends State<MyHomePage> {
     {"title": "Contacts", "icon": Icons.contacts, "color": Colors.amber},
     {"title": "Camera", "icon": Icons.camera, "color": Colors.deepOrange},
     {"title": "Music", "icon": Icons.music_note, "color": Colors.purpleAccent},
-    {"title": "Videos", "icon": Icons.video_library, "color": Colors.tealAccent},
+    {
+      "title": "Videos",
+      "icon": Icons.video_library,
+      "color": Colors.tealAccent
+    },
     {"title": "Gallery", "icon": Icons.photo, "color": Colors.lightBlue},
   ];
 
@@ -32,19 +42,15 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home Launcher'),
+        title: const Text('MI Home'),
         actions: [
           IconButton(
             icon: const Icon(Icons.apps),
-            onPressed: () {
-              // Handle app drawer
-            },
+            onPressed: () {},
           ),
           IconButton(
             icon: const Icon(Icons.search),
-            onPressed: () {
-              
-            },
+            onPressed: () {},
           ),
         ],
       ),
@@ -131,10 +137,9 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Handle action
         },
-        child: const Icon(Icons.add),
         backgroundColor: Colors.blue,
+        child: const Icon(Icons.add),
       ),
     );
   }
@@ -150,7 +155,8 @@ class _MyHomePageState extends State<MyHomePage> {
             (index) => AnimatedBuilder(
               animation: _pageController,
               builder: (context, child) {
-                final currentPage = _pageController.hasClients ? _pageController.page ?? 0 : 0;
+                final currentPage =
+                    _pageController.hasClients ? _pageController.page ?? 0 : 0;
                 final isActive = (currentPage.round() == index);
                 return Container(
                   margin: const EdgeInsets.symmetric(horizontal: 4),

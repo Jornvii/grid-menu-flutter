@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MusicScreen extends StatefulWidget {
+  const MusicScreen({super.key});
+
   @override
   _MusicScreenState createState() => _MusicScreenState();
 }
@@ -12,9 +14,9 @@ class _MusicScreenState extends State<MusicScreen> {
 
   final List<Map<String, String>> _albums = [
     {"title": "Skull", "artist": "Vannda", "image": "https://cdn.kiripost.com/static/images/photo_2023-06-13_16-49-51.2e16d0ba.fill-960x540.jpg"},
-    {"title": "Album 1", "artist": "Vannda", "image": "https://wheninphnompenh.com/wp-content/uploads/2023/05/DSC_0078-1024x1024.jpg"},
-    {"title": "Album 2", "artist": "Vannda", "image": "https://viberate-upload.ams3.cdn.digitaloceanspaces.com/prod/entity/artist/vannda-D0gcS"},
-    // Add more albums here
+    {"title": "Skull 2", "artist": "Vannda", "image": "https://wheninphnompenh.com/wp-content/uploads/2023/05/DSC_0078-1024x1024.jpg"},
+    {"title": "Skull 3", "artist": "Vannda", "image": "https://viberate-upload.ams3.cdn.digitaloceanspaces.com/prod/entity/artist/vannda-D0gcS"},
+
   ];
 
   @override
@@ -50,7 +52,7 @@ class _MusicScreenState extends State<MusicScreen> {
           image: NetworkImage(currentAlbum["image"]!), 
           fit: BoxFit.cover,
         ),
-        boxShadow: [const BoxShadow(color: Colors.black26, blurRadius: 10)],
+        boxShadow: const [BoxShadow(color: Colors.black26, blurRadius: 10)],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -169,7 +171,7 @@ class _MusicScreenState extends State<MusicScreen> {
                 fit: BoxFit.cover,
               ),
               borderRadius: BorderRadius.circular(12),
-              boxShadow: [const BoxShadow(color: Colors.black26, blurRadius: 8)],
+              boxShadow: const [ BoxShadow(color: Colors.black26, blurRadius: 8)],
             ),
             child: Center(
               child: Text(
